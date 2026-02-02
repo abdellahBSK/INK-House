@@ -1,0 +1,121 @@
+📚 Application de Gestion de Bibliothèque – Documentation
+1. Présentation générale
+
+Cette application est une application web de gestion de bibliothèque personnelle, développée en Java avec Jakarta EE.
+Elle permet à un utilisateur de :
+
+Ajouter des livres
+
+Modifier les informations d’un livre
+
+Supprimer un livre
+
+Visualiser les livres sous forme de cartes avec image
+
+Naviguer à travers une interface moderne et responsive
+
+Le projet a été réalisé dans un contexte académique afin de mettre en pratique les concepts fondamentaux du développement web Java.
+
+2. Architecture de l’application (MVC)
+
+L’application suit le pattern MVC (Model – View – Controller) :
+
+🔹 Model
+
+Livre.java
+Représente un livre (id, titre, auteur, image).
+
+🔹 Repository
+
+LivreRepository.java
+Gère les données en mémoire à l’aide d’une ArrayList.
+Cette classe simule une base de données.
+
+🔹 Controller
+
+LivreServlet.java
+Gère toutes les requêtes HTTP liées aux livres (/livres).
+
+🔹 View
+
+Fichiers JSP :
+
+home.jsp
+
+livres.jsp
+
+livre-form.jsp
+
+about.jsp
+
+error.jsp
+
+Les vues sont placées dans WEB-INF pour empêcher l’accès direct.
+
+3. Configuration sans web.xml
+
+L’application n’utilise pas de fichier web.xml.
+La configuration est faite à l’aide des annotations Jakarta EE :
+
+@WebServlet("/livres")
+
+
+Cela permet :
+
+Une configuration plus simple
+
+Un code plus lisible
+
+Une approche moderne recommandée par Jakarta EE
+
+4. Fonctionnement général
+
+L’utilisateur accède à l’application
+
+index.jsp redirige vers home.jsp
+
+Les actions sur les livres passent par LivreServlet
+
+Le contrôleur décide quelle vue afficher
+
+Les données sont récupérées depuis le repository
+
+Les JSP affichent les données via JSTL
+
+5. Gestion des images de livres
+
+Chaque livre peut avoir une image de couverture :
+
+L’image est optionnelle
+
+Si aucune image n’est fournie, une image par défaut est utilisée
+
+Le champ imagePath est stocké dans l’objet Livre
+
+Cette approche permet une interface plus visuelle et professionnelle.
+
+6. Technologies utilisées
+
+Java 17+
+
+Jakarta EE (Servlets, JSP)
+
+JSTL
+
+HTML5 / CSS3
+
+Apache Tomcat 10+
+
+Maven
+
+7. Objectifs pédagogiques
+
+Comprendre l’architecture MVC
+
+Utiliser les servlets et JSP correctement
+
+Séparer la logique métier de la présentation
+
+Créer une application web structurée et maintenable
+
+Appliquer des bonnes pratiques professionnelles
